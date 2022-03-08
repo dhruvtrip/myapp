@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { stringify } from 'querystring';
 
 @Component({
   selector: 'app-board',
@@ -14,8 +15,32 @@ export class BoardComponent implements OnInit {
   // inject dependencies here
   constructor() { }
 
-  ngOnInit(): void {
-  
+  //lifecycle hook
+  ngOnInit(){
+    this.newGame();
+  }
+
+  //method to initialize the game
+  newGame(){
+    this.squares = Array(9).fill(null);
+    this.winner = null as any;
+    this.xIsNext = true;
+  }
+
+  get player(){
+    return this.xIsNext ? 'X' : 'O';
+  }
+
+  makeMove(idx: number){
+    if(!this.squares[idx]){
+      this.squares.splice(idx, 1, this.player); //replaces 1 element at the square the player clicked on
+      this.xIsNext = !this.xIsNext; //change player
+    }
+    this.winner = this.calculateWinner();
+  }
+
+  calculateWinner(){
+    return '';
   }
 
 }
