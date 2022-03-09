@@ -7,8 +7,7 @@ import { Component, Input } from '@angular/core';
       {{ value }}
     </button>
   `,
-  styles: [
-  ]
+  styles: ['button { width: 100%; height: 100%; font-size: 5em !important; }'] 
 })
 //change detection to update UI
 export class SquareComponent {
