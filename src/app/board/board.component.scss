@@ -2,8 +2,12 @@ main {
     display: grid;
     grid-template-columns: 200px 200px 200px;
     grid-gap: 0px;
+    padding: 2rem 0;
 }
   
+h2 {
+    margin-bottom: 0;
+}
 app-square {
     border: 1px gray solid;
     height: 200px;
